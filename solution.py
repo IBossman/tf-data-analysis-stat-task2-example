@@ -14,10 +14,10 @@ def solution(p: float, x: np.array) -> tuple:
     # x - массив уровней значимости
     # alpha - уровень значимости
     
-    alpha = 1 - p
+    alpha = 1 - p - 0.05
     beta = 2 * p - 1
     loc = x.max()
     quantile = alpha
     scale = np.sqrt(np.var(x)) / np.sqrt(len(x))
-    return loc/ (beta ** (1 / len(x))) , \
-           loc/ (alpha ** (1 / len(x)))
+    return loc/ ((1 - (alpha / 2)) ** (1 / len(x))) , \
+           loc/ ((alpha / 2) ** (1 / len(x)))
