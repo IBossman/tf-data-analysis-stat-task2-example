@@ -16,7 +16,7 @@ def solution(p: float, x: np.array) -> tuple:
     
     alpha = 1 - p
     beta = 2 * p - 1
-    loc = x.max()
+    loc = (x - 0.05).max()
     quantile = alpha
     scale = np.sqrt(np.var(x)) / np.sqrt(len(x))
     return loc/ (beta ** (1 / len(x))), \
