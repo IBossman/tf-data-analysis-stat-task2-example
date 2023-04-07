@@ -15,9 +15,9 @@ def solution(p: float, x: np.array) -> tuple:
     # alpha - уровень значимости
     
     alpha = 1 - p
-    beta = 2 * p - 1
-    loc = (x - 0.05).max()
+    beta = 2
+    loc = x.max()
     quantile = alpha
     scale = np.sqrt(np.var(x)) / np.sqrt(len(x))
-    return loc/ (beta ** (1 / len(x))), \
-           loc/ (alpha ** (1 / len(x)))
+    return loc/ (beta), \
+           loc/ (1 + alpha ** (1 / len(x)))
