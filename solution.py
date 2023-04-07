@@ -14,7 +14,7 @@ def solution(p: float, x: np.array) -> tuple:
     # x - массив уровней значимости
     # alpha - уровень значимости
     
-    alpha = 1 - p - 0.05
+    alpha = 1 - p - 0.1
     beta = 2 * p - 1
     loc = x.max()
     quantile = alpha
